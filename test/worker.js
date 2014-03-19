@@ -1,18 +1,12 @@
 var k = require('../lib/koda.js')
-  , mongodb = require('mongodb')
+  , amqp = require('amqp')
 
-mongodb.MongoClient.connect('mongodb://localhost/test', function(err, db) {
-  if (err || !db) {
-    console.error('failed to connect to db', err, db);
-    process.exit(1);
-  }
-  
-  var koda = k.create(db);
-  var handler = function(event) {
-    console.log('got test event', event);
-    setTimeout(function() {
-      koda.next('test', handler);
-    }, 5000)
-  }
-  koda.next('test', handler);
+var connection = amqp.createConnection({ host: 'localhost' });
+
+connection.on('ready', function () {
+  var server = new k.Server(connection, 'my-namespace');
+  server.on('my-message', function(request, cb) {
+    console.log('received request', request);
+    cb(null, { foo: 'bar', x: 1, y: 2 });
+  });
 });

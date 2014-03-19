@@ -1,4 +1,4 @@
 koda
 ====
 
-Message Queue for Node.js and MongoDB
+Message Queue for Node.js and RabbitMQ
