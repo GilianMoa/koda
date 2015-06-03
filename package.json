@@ -1,7 +1,7 @@
 {
   "name": "koda",
-  "version": "0.0.3",
-  "description": "Message Queue for Node.js and RabbitMQ",
+  "version": "0.0.2",
+  "description": "Message Queue for Node.js and MongoDB",
   "main": "index.js",
   "repository": {
     "type": "git",
@@ -13,13 +13,14 @@
     "queue",
     "nodejs",
     "node",
-    "rabbitmq",
-    "ampq"
+    "mongo",
+    "mongodb"
   ],
-	"dependencies": {
-    "node-uuid": "*",
-    "amqp": "*"
-	},
+  "dependencies": {
+    "mongodb": ">=1.4.5",
+    "vubsub": ">=1.1.8",
+    "q":"~1.0.0"
+  },
   "author": {
     "name": "Federico Pinna",
     "email": "fpinna@vivocha.com"
