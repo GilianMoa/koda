@@ -1,6 +1,6 @@
 {
   "name": "koda",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "Message Queue for Node.js and MongoDB",
   "main": "index.js",
   "repository": {
@@ -17,9 +17,9 @@
     "mongodb"
   ],
   "dependencies": {
-    "mongodb": ">=1.4.5",
-    "vubsub": ">=1.1.8",
-    "q":"~1.0.0"
+    "mongodb": "~2.0.55",
+    "vubsub": "~1.2.0",
+    "q":"~1.1.2"
   },
   "author": {
     "name": "Federico Pinna",
